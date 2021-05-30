@@ -4,7 +4,7 @@
 
 This example creates a custom image in Amazon SageMaker Studio using [Poetry](https://python-poetry.org/) to manage the Python dependencies.
 
-###In the AWS Console
+### In the AWS Console
  - create SageMaker Studio using Quick Start
  - create an IAM Role with s3 bucket read & write access 
 
@@ -62,7 +62,7 @@ If successful, output: "ImageArn"
 
 If successful, output: "ImageVersionArn"
 
-###Create an AppImageConfig for this image.
+### Create an AppImageConfig for this image.
 
 AppImageConfigName must be unique to your account.
 
@@ -73,7 +73,7 @@ aws --region ${REGION} sagemaker create-app-image-config --cli-input-json file:/
 
 If successful, output: "AppImageConfigArn"
 
-###Update Domain, providing the SageMaker Image and AppImageConfig. 
+### Update Domain, providing the SageMaker Image and AppImageConfig. 
 
 Replace the placeholder for DomainId.
 
