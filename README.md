@@ -4,10 +4,12 @@
 
 This example creates a custom image in Amazon SageMaker Studio using [Poetry](https://python-poetry.org/) to manage the Python dependencies.
 
-In the AWS Console
+###In the AWS Console
  - create SageMaker Studio using Quick Start
  - create an IAM Role with s3 bucket read & write access 
 
+
+### Using the AWS CLI
 ### Creating the ECR repository
 Create the ECR repository.
 ```
@@ -61,6 +63,7 @@ If successful, output: "ImageArn"
 If successful, output: "ImageVersionArn"
 
 ###Create an AppImageConfig for this image.
+
 AppImageConfigName must be unique to your account.
 
 ```
