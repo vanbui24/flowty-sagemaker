@@ -80,7 +80,7 @@ Replace the placeholder for DomainId.
 ```
 aws --region ${REGION} sagemaker update-domain --cli-input-json file://update-domain-input.json
 ```
-If successful, ouput: "DomainArn"
+If successful, output: "DomainArn"
 
 ### Notes
 
