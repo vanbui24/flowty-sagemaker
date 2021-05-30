@@ -29,6 +29,8 @@ RUN \
 
 # Update Python with the required packages
 RUN pip install --upgrade pip
+# Install Poetry
+RUN pip install poetry
 # Install Flowty
 RUN pip install flowty
 # Install or_datasets
