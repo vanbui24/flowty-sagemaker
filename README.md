@@ -4,7 +4,7 @@
 
 This example creates a custom image in Amazon SageMaker Studio using [Poetry](https://python-poetry.org/) to manage the Python dependencies.
 
-In the AWS Console
+In the AWS Consoled
  - create SageMaker Studio using Quick Start
  - choose an IAM Role with s3 bucket access
 
