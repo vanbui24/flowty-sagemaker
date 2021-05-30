@@ -1,5 +1,5 @@
 		{
-            "AppImageConfigName": "flowty-kernel-image-config",
+            "AppImageConfigName": "flowty-app-image-config",
             "KernelGatewayImageConfig": {
                 "KernelSpecs": [
                     {
