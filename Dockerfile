@@ -5,7 +5,7 @@ FROM python:3.7
 # OVERVIEW
 # 1. Creates the `sagemaker-user` user with UID/GID 1000/100.
 # 2. Ensures this user can `sudo` by default and compatible distributions
-# 3. Installs flowty, or_datasets, and configures Poetry, then installs the environment defined in pyproject.toml
+# 3. Installs flowty, or_datasets using pip, and configures Poetry, then installs the environment defined in pyproject.toml
 # 4. Configures the kernel (ipykernel should be installed on the parent image or defined in pyproject.toml)
 # 5. Make the default shell `bash`. This enhances the experience inside a Jupyter terminal as otherwise Jupyter defaults to `sh`
 ######################
