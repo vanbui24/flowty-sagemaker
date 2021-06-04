@@ -1,10 +1,10 @@
 {
-    "DomainId": "<d-2fwx74a0v5n6>",
+    "DomainId": "<domainId>",
     "DefaultUserSettings": {
         "KernelGatewayAppSettings": {
             "CustomImages": [
                 {
-                    "ImageName": "image-name",
+                    "ImageName": "<image-name>",
                     "AppImageConfigName": "flowty-app-image-config"
                 }
             ]
