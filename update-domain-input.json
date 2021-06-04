@@ -5,7 +5,7 @@
             "CustomImages": [
                 {
                     "ImageName": "<image-name>",
-                    "AppImageConfigName": "flowty-app-image-config"
+                    "AppImageConfigName": "<AppImageConfig-Name>"
                 }
             ]
         }
