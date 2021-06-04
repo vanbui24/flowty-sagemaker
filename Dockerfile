@@ -41,7 +41,7 @@ RUN pip install flowty
 RUN pip install or_datasets
 # Install networkx matplotlib
 RUN pip install networkx matplotlib
-# Disable virtual environments (see notes in README.md)
+# Install networkx boto3 sagemaker
 RUN pip install boto3 sagemaker
 
 
