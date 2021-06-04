@@ -5,9 +5,7 @@
 This example creates a custom image in Amazon SageMaker Studio.
 
 ### In the AWS Console
- - create SageMaker Studio using Quick Start
- - attach an IAM Role with s3 read & write access 
-
+ - create SageMaker Studio using Quick Start 
 
 ### Using the AWS CLI
 ### Creating the ECR repository
@@ -29,7 +27,9 @@ If successful, output repository details
 ### Building the image
 Build the Docker image and push to Amazon ECR.
 ```
-aws --region ${REGION} ecr get-login-password | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY_NAME}
+aws --region ${REGION} ecr get-login-password | docker login \
+    --username AWS \
+    --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY_NAME}
 
 docker build . -t ${IMAGE_NAME} -t ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY_NAME}:${IMAGE_NAME}
 ```
@@ -56,7 +56,8 @@ aws --region ${REGION} sagemaker create-image-version \
     --base-image "${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY_NAME}:${IMAGE_NAME}"
 
 # Verify the image-version is created successfully. Do NOT proceed if image-version is in CREATE_FAILED state or in any other state apart from CREATED.
-aws --region ${REGION} sagemaker describe-image-version --image-name ${IMAGE_NAME}
+aws --region ${REGION} sagemaker describe-image-version \
+    --image-name ${IMAGE_NAME}
 ```
 If successful, output: "ImageArn" 
 
@@ -64,11 +65,11 @@ If successful, output: "ImageVersionArn"
 
 ### Create an AppImageConfig for this image.
 
-AppImageConfigName must be unique to your account.
+Replace the placeholder for AppImageConfigName, which must be unique to your account.
 
 ```
-aws --region ${REGION} sagemaker create-app-image-config --cli-input-json file://app-image-config-input.json
-
+aws --region ${REGION} sagemaker create-app-image-config \
+    --cli-input-json file://app-image-config-input.json
 ```
 
 If successful, output: "AppImageConfigArn"
@@ -78,11 +79,10 @@ If successful, output: "AppImageConfigArn"
 Replace the placeholder for DomainId.
 
 ```
-aws --region ${REGION} sagemaker update-domain --cli-input-json file://update-domain-input.json
+aws --region ${REGION} sagemaker update-domain \
+    --cli-input-json file://update-domain-input.json
 ```
 If successful, output: "DomainArn"
 
 ### Notes
-
-* Since SageMaker Studio overrides `ENTRYPOINT` and `CMD` instructions (see [documentation](https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi-specs.html)), this sample disables the Poetry virtual environments as recommended in their [FAQ](https://python-poetry.org/docs/faq/#i-dont-want-poetry-to-manage-my-virtual-environments-can-i-disable-it). 
-* Note that `ipykernel` must be installed on custom images for SageMaker Studio. If this package is not installed by default on the parent image, then it should be included in the `pyproject.toml` file. 
+* Note that `ipykernel` must be installed on custom images for SageMaker Studio. 
