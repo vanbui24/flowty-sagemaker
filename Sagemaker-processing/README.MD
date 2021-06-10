@@ -37,13 +37,11 @@ docker push ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY}:${IMAGE_
 
 ### Using it with Sagemaker ScriptProcessor
 
-```
 # IAM Arn role in your account to be used with the SageMaker ScriptProcessor
 ROLE_ARN=<role-arn>
 IMAGE_URI = ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY}:${IMAGE_NAME}
 
 Clone the git repository by running the following in a new notebook (Python 3)
-
 ```
 !git clone https://github.com/vanbui24/flowty-sagemaker 
 ```
