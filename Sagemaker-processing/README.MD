@@ -39,6 +39,7 @@ docker push ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY}:${IMAGE_
 
 # IAM Arn role in your account to be used with the SageMaker ScriptProcessor
 ROLE_ARN=<role-arn>
+
 IMAGE_URI = ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY}:${IMAGE_NAME}
 
 Clone the git repository by running the following in a new notebook (Python 3)
@@ -47,6 +48,8 @@ Clone the git repository by running the following in a new notebook (Python 3)
 ```
 
 In the Sagemaker-processing folder: Open the sagemaker-processing notebook
+
 Set the IMAGE_URI and ROLE_ARN
+
 Run all cells
 
