@@ -73,6 +73,8 @@ with open(name+'.json', 'w') as fp:
 bucket_name = "flowty-sagemaker"
 key = name+".json"  #filename
 
+s3_client = s3.boto3.client('s3')
+
 s3_client.put_object(
      Body=str(json.dumps(data, indent=4)),
      Bucket=bucket_name,
