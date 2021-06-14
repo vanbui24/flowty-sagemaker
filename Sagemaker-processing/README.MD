@@ -23,7 +23,9 @@ Build the Docker image and push to Amazon ECR.
 ACCOUNT_ID=<account-id>
 IMAGE_NAME=<image-name>
 
-aws --region ${REGION} ecr get-login-password | docker login --username AWS --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY}
+aws --region ${REGION} ecr get-login-password | docker login 
+    --username AWS 
+    --password-stdin ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${REPOSITORY}
 ```
 
 ### Build the image
