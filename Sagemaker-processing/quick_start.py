@@ -1,4 +1,4 @@
-# Vehicle Routing Problem with Time Windows
+# Vehicle Routing Problem with Time Window
 
 from flowty import Model, xsum
 from or_datasets import vrp_rep
