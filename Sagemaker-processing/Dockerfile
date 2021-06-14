@@ -18,7 +18,7 @@ RUN pip install or_datasets
 # Install networkx matplotlib
 RUN pip install networkx matplotlib
 # Install networkx boto3 sagemaker
-RUN pip install boto3 sagemaker
+RUN pip install boto3 sagemaker json
 
 ENV PYTHONUNBUFFERED=TRUE
 
