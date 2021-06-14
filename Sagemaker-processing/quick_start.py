@@ -54,3 +54,27 @@ networkx.draw_networkx_labels(gx, pos, labels={i: i for i in gx.nodes})
 networkx.draw_networkx_edges(gx, pos, nodelist=gx.edges)
 #plt.show() # if gui backend is supported
 #plt.savefig("mygraph.png")
+
+### output variable_values as json file in s3 bucket subfolder###
+
+#create dict populate dict
+variable_values = {}
+for var in m.vars:
+    if var.x > 0:
+        variable_values[var.name] = var.x
+
+data = {"objective value":m.objectiveValue, "variable values":variable_values}
+
+#save dict
+with open(name+'.json', 'w') as fp:
+    json.dump(data, fp, indent=4)
+
+#upload json object to s3 bucket in output subfolder
+bucket_name = "flowty-sagemaker"
+key = name+".json"  #filename
+
+s3_client.put_object(
+     Body=str(json.dumps(data, indent=4)),
+     Bucket=bucket_name,
+     Key="output/"+key
+)
