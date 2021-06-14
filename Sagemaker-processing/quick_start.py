@@ -56,7 +56,7 @@ networkx.draw_networkx_edges(gx, pos, nodelist=gx.edges)
 #plt.savefig("mygraph.png")
 
 ### output variable_values as json file in s3 bucket subfolder###
-
+import json
 #create dict populate dict
 variable_values = {}
 for var in m.vars:
