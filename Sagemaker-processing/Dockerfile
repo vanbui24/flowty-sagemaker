@@ -1,6 +1,6 @@
 FROM python:3.7
 
-## system library pre-requisites
+# system library pre-requisites
 RUN \
     apt-get update && \
     apt-get install -y \
@@ -9,7 +9,7 @@ RUN \
     gmodule-2.0 sudo && \
     rm -rf /var/lib/apt/lists/*
 
-# Update Python with the required packages
+# Install the required packages
 RUN pip install --upgrade pip
 # Install Flowty
 RUN pip install flowty
@@ -17,7 +17,7 @@ RUN pip install flowty
 RUN pip install or_datasets
 # Install networkx matplotlib
 RUN pip install networkx matplotlib
-# Install networkx boto3 sagemaker
+# Install boto3 sagemaker json
 RUN pip install boto3 sagemaker json
 
 ENV PYTHONUNBUFFERED=TRUE
